@@ -170,8 +170,8 @@ const tasks = [
     const titleValue = inputTitle.value;
     const bodyValue = inputBody.value;
 
-    if (!titleValue || !bodyValue) {
-      alert("Пожалуйста введите title и body");
+    if (!titleValue) {
+      alert("Пожалуйста введите хотя бы заголовок");
       return;
     }
 
@@ -196,7 +196,7 @@ const tasks = [
 
   function deleteTask(id) {
     const { title } = objOfTasks[id];
-    const isConfirm = confirm(`Точно вы хотите удалить задачу: ${title}`);
+    const isConfirm = confirm(`Точно вы хотите удалить задачу: "${title}" ?`);
     if (!isConfirm) return isConfirm;
     delete objOfTasks[id];
     return isConfirm;
